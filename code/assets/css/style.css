@@ -451,10 +451,13 @@ select:focus-visible {
 .pole-section.reverse .pole-section__media {
   order: -1;
 }
-/* Photo de personne dans un bloc pole-section (ex. À propos) : ne jamais
-   rogner le haut (règle permanente) — l'image étant déjà cadrée sans marge
-   au-dessus de la tête, tout recadrage automatique doit mordre sur le bas,
-   jamais sur le haut. */
+/* Photo de personne dans un bloc pole-section : ne jamais rogner le haut
+   (règle permanente) — l'image étant déjà cadrée sans marge au-dessus de
+   la tête, tout recadrage automatique doit mordre sur le bas, jamais sur
+   le haut. Classe utilitaire disponible pour toute future photo de
+   personne dans ce pattern (actuellement inutilisée : la section "Notre
+   positionnement" d'À propos utilise une photo générique, à la demande de
+   Ruben du 05/08/2026). */
 .pole-section__media--person img {
   object-position: center top;
 }

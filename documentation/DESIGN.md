@@ -94,15 +94,12 @@ première ligne, avant même la section des 3 pôles.
   voile marine (conforme à la charte §5.3 "jamais de texte sur photo sans
   fond semi-transparent marine pour le contraste") — inchangé depuis la V1.
   Depuis le 05/08/2026, la section "Notre positionnement" est elle aussi un
-  `.pole-section` avec la photo de Mr Patrick D. ATINDEHOU
-  (`patrick-atindehou-ceo.jpg`, même fichier que le hero Accueil, réemployé
-  tel quel), **sans overlay glassmorphism** cette fois (juste la photo en
-  bloc, traitement volontairement plus sobre que le hero). Nouveau
-  modificateur CSS `.pole-section__media--person` (`object-position: center
-  top`) : applique la règle permanente "jamais de rognage en haut d'une
-  photo de personne" même quand `object-fit: cover` doit rogner l'image
-  pour remplir un cadre plus large que haut (le rognage automatique mord
-  alors sur le bas, jamais sur le haut). La section "Notre signature"
+  `.pole-section`, avec `partenariat-strategique.jpg` (poignée de main
+  professionnelle, licence Unsplash gratuite/usage commercial, même source
+  que les autres photos génériques du site) — Ruben a explicitement demandé
+  de ne pas réutiliser une 2e fois la photo de Mr Patrick à cet endroit,
+  pour ne pas personnaliser à l'excès une section qui parle de posture
+  d'entreprise plutôt que d'une personne. La section "Notre signature"
   (Excellence/Innovation/Impact) a aussi reçu 3 icônes SVG dédiées (étoile,
   ampoule, flèche ascendante), même style que les icônes pôles (trait 2px,
   dégradé orange→rouge) — nouvelle classe `.value-card__icon`.
