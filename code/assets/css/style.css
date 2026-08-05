@@ -366,44 +366,61 @@ select:focus-visible {
   height: 100%;
   object-fit: cover;
 }
-/* Légende (nom/fonction) en overlay sur la photo du hero — dégradé blanc qui
-   part opaque au ras du bas et se dissout vers transparent à ~30% de la
-   hauteur en remontant, pour rester dans le thème clair du site. */
+/* Légende (nom/fonction) en overlay sur la photo du hero — carte "verre
+   dépoli" (glassmorphism) posée en flottant au-dessus du bas de la photo,
+   plutôt qu'un simple dégradé (peu lisible sur cette photo à fond sombre). */
 .hero__media-caption {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 28px 26px 20px;
-  background: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 0.96) 0%,
-    rgba(255, 255, 255, 0.82) 14%,
-    rgba(255, 255, 255, 0) 30%
-  );
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(20, 30, 38, 0.38);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.45);
 }
 .hero__media-name {
   margin: 0;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.05rem;
-  color: var(--marine);
+  color: var(--white);
 }
 .hero__media-role {
   margin: 2px 0 0;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--support);
+  color: rgba(255, 255, 255, 0.82);
 }
 
-/* ---------- Sections pôles avec photo (page Nos pôles) ---------- */
+/* ---------- Sections pôles avec photo (page Nos services + Accueil) ---------- */
+/* Liste de blocs pôle/photo empilés (Accueil) — l'espacement entre blocs
+   remplace celui qu'apportaient les <section> séparées de Nos services. */
+.pole-section-list {
+  display: grid;
+  gap: 64px;
+  margin-top: 44px;
+}
 .pole-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
+}
+.pole-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+/* Toujours justifier le texte des blocs/cartes pour une harmonie visuelle
+   (habitude prise le 05/08/2026, à appliquer systématiquement). */
+.pole-section p {
+  text-align: justify;
+  text-justify: inter-word;
 }
 .pole-section__heading {
   display: flex;
@@ -483,6 +500,8 @@ select:focus-visible {
   color: var(--support);
   font-size: 0.97rem;
   margin-bottom: 0;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* ---------- Liste "expertise" (Accueil — remplace poles-grid/pole-card,
@@ -512,6 +531,8 @@ select:focus-visible {
   color: var(--support);
   max-width: 75ch;
   margin-bottom: 0;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* ---------- Cartes valeurs (page à propos) ---------- */
@@ -534,6 +555,8 @@ select:focus-visible {
   color: var(--support);
   font-size: 0.95rem;
   margin-bottom: 0;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* ---------- Bandeau CTA ---------- */

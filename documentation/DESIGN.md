@@ -150,3 +150,33 @@ selon la page :
   `nos-services.html`), contenu détaillé adapté aux 3 nouveaux axes avec 3
   nouvelles photos fournies par Ruben (`edutech.jpg`, `coaching.jpg`,
   `business-corporate.jpg`, remplacent les anciennes `pole-*.jpg`).
+- ⚠️ **05/08/2026, corrections immédiates après retour de Ruben** :
+  - **Recadrage photo hero (règle à retenir pour toute future photo de
+    ce type)** : le premier recadrage rognait ~6,5% en haut (pour retirer
+    du fond vide au-dessus de la tête) — visuellement perçu comme "la tête
+    coupée", très mauvais. **Règle posée par Ruben, à appliquer sur toute
+    future photo de personne** : on peut rogner à gauche, à droite et en
+    bas, **jamais en haut**. Recadrage refait en gardant 100% de la hauteur
+    source (`box = (left, 0, left+new_w, h)`, aucun rognage vertical),
+    recentré uniquement sur les côtés pour obtenir le carré.
+  - **Overlay légende** : le dégradé blanc simple ("mal géré", peu lisible
+    sur cette photo à fond sombre) remplacé par une **carte "verre dépoli"
+    (glassmorphism)** flottante en bas de la photo — fond semi-transparent
+    sombre + `backdrop-filter: blur(16px) saturate(160%)`, bordure claire
+    fine, ombre portée, texte blanc. Nettement plus lisible et plus soigné
+    qu'un dégradé.
+  - **Bloc "Trois axes" de l'Accueil, 2e refonte** : les icônes SVG +
+    liste `.expertise-list`/`.expertise-block` remplacées par le **même
+    pattern que la page Nos services** (`.pole-section`, alternance photo/
+    texte, 3 vraies photos `edutech.jpg`/`coaching.jpg`/
+    `business-corporate.jpg`) — cohérence visuelle entre Accueil et Nos
+    services, et mise en page mieux équilibrée qu'une colonne de texte
+    avec une petite icône. Nouvelle classe `.pole-section-list` pour
+    l'espacement vertical entre les 3 blocs empilés (remplace l'espacement
+    qu'apportaient les `<section>` séparées sur Nos services).
+  - **Nouvelle habitude permanente (à appliquer systématiquement)** :
+    tout texte de paragraphe à l'intérieur d'un bloc/carte (`.pole-section
+    p`, `.value-card p`, `.pole-card p`) est désormais **justifié**
+    (`text-align: justify`) pour une harmonie visuelle des blocs de texte
+    — demande de Ruben du 05/08/2026, à reproduire sur tout nouveau bloc
+    de ce type.
