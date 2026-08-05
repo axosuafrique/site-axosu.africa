@@ -356,7 +356,7 @@ select:focus-visible {
 /* ---------- Photo du hero ---------- */
 .hero__media {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 30px 60px -30px rgba(14, 58, 80, 0.4);
@@ -365,6 +365,37 @@ select:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+/* Légende (nom/fonction) en overlay sur la photo du hero — dégradé blanc qui
+   part opaque au ras du bas et se dissout vers transparent à ~30% de la
+   hauteur en remontant, pour rester dans le thème clair du site. */
+.hero__media-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 26px 20px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.82) 14%,
+    rgba(255, 255, 255, 0) 30%
+  );
+}
+.hero__media-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--marine);
+}
+.hero__media-role {
+  margin: 2px 0 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--support);
 }
 
 /* ---------- Sections pôles avec photo (page Nos pôles) ---------- */
@@ -451,6 +482,35 @@ select:focus-visible {
 .pole-card p {
   color: var(--support);
   font-size: 0.97rem;
+  margin-bottom: 0;
+}
+
+/* ---------- Liste "expertise" (Accueil — remplace poles-grid/pole-card,
+   pensé pour des paragraphes longs plutôt que des cartes courtes) ---------- */
+.expertise-list {
+  display: grid;
+  gap: 36px;
+  margin-top: 44px;
+}
+.expertise-block {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 22px;
+  padding: 28px 0 28px 26px;
+  border-left: 3px solid var(--orange);
+}
+.expertise-block__icon {
+  width: 46px;
+  height: 46px;
+  margin-top: 2px;
+}
+.expertise-block h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.expertise-block p {
+  color: var(--support);
+  max-width: 75ch;
   margin-bottom: 0;
 }
 
@@ -618,7 +678,10 @@ select:focus-visible {
 @media (min-width: 760px) {
   .hero__grid {
     grid-template-columns: 1.1fr 0.9fr;
-    align-items: center;
+    /* "start" plutôt que "center" : évite qu'une colonne plus haute que
+       l'autre ne pousse le texte vers le bas et crée un vide au-dessus du
+       titre (constaté avec la nouvelle photo carrée + long sous-titre). */
+    align-items: start;
   }
 }
 

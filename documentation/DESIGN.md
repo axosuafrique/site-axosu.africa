@@ -122,3 +122,31 @@ selon la page :
   d'autocritique ci-dessus) + bandeau photo (À propos) passé en texte blanc
   pur + nouvelle variante `.cta-band--light` (fond blanc) appliquée aux
   bandeaux de clôture d'Accueil et Nos pôles.
+- **05/08/2026** — Refonte de contenu V2 (branche `v2`) : photo hero
+  remplacée par le portrait de Mr Patrick D. ATINDEHOU (CEO). `.hero__media`
+  passé de `aspect-ratio: 4/5` à `1/1` (photo source quasi carrée,
+  1321×1191px, recadrée légèrement pour retirer l'excès de fond sombre
+  au-dessus de la tête) — objectif : que tout le hero (photo + titre + texte
+  + boutons) tienne dans la hauteur d'écran sur desktop sans scroll.
+  `.hero__grid` passé de `align-items: center` à `align-items: start` (règle
+  ≥760px) : évite qu'une colonne plus haute que l'autre ne pousse le texte
+  vers le bas et crée un vide au-dessus du titre — corrige ce problème quelle
+  que soit la hauteur relative des deux colonnes, pas seulement pour cette
+  photo. Ajout d'un overlay légende (`.hero__media-caption`, dégradé blanc
+  opaque au ras du bas → transparent à 30% de la hauteur) pour afficher le
+  nom/la fonction du CEO directement sur la photo.
+  Kicker du hero ("AXOSU SARL — Cotonou, Bénin") retiré sans remplacement,
+  sur demande explicite de Ruben (un kicker de 3 mots au-dessus d'un titre de
+  3 mots faisait doublon, jugé faible en copywriting).
+  Bloc "Trois pôles" (grille `.poles-grid`/`.pole-card`, pensée pour un texte
+  court) remplacé par une **liste verticale `.expertise-list`/
+  `.expertise-block`** (icône + titre + paragraphe pleine largeur, bordure
+  gauche orange façon `.value-card`) — nécessaire car les 3 nouveaux textes
+  (EduTech / Coaching Professionnel / Business Corporate) sont des
+  paragraphes complets, illisibles compressés dans une grille 3 colonnes de
+  petites cartes. `.poles-grid`/`.pole-card` restent définies dans le CSS
+  (plus utilisées sur `index.html`) au cas où elles resserviraient ailleurs.
+  Page "Nos pôles" renommée **"Nos services"** (`nos-poles.html` →
+  `nos-services.html`), contenu détaillé adapté aux 3 nouveaux axes avec 3
+  nouvelles photos fournies par Ruben (`edutech.jpg`, `coaching.jpg`,
+  `business-corporate.jpg`, remplacent les anciennes `pole-*.jpg`).
