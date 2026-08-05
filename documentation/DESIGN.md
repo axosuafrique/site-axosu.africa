@@ -17,8 +17,11 @@ retirés. Direction actuelle, plus sobre :
 - **Famille de boutons "Nous contacter"** (nav, hero, bandeaux CTA) : fond
   dégradé orange→rouge, texte blanc, harmonisée sur tout le site — c'est
   désormais LE signal visuel "point de contact" reconnaissable partout.
-- **Icônes des 3 pôles** : trait en dégradé orange→rouge (`linearGradient`
-  SVG), plus le bleu marine plein utilisé au premier jet.
+- **Icônes en dégradé orange→rouge** : gardées pour les icônes ponctuelles
+  restantes du site (ex. page Nos services, en tête de chaque section
+  détaillée) — mais depuis la refonte V2 (05/08/2026), les blocs "3 axes"
+  de l'Accueil et de Nos services utilisent de **vraies photos**, pas des
+  icônes, comme traitement principal (voir section Images).
 
 ## Palette (héritée de la charte, ne pas dévier)
 | Rôle | Hex |
@@ -52,23 +55,48 @@ première ligne, avant même la section des 3 pôles.
 - Colonne de contenu resserrée (max ~1180px), marges généreuses — référence
   "Star Body Gym" citée dans la charte (sensation premium, pas de page
   saturée).
-- 3 pôles = 3 cartes de poids égal (pas de numérotation 01/02/03 : ce ne sont
-  pas des étapes séquentielles mais 3 piliers parallèles).
+- **3 axes stratégiques (EduTech / Coaching Professionnel / Business
+  Corporate)** : depuis la refonte V2, présentés en **blocs alternés
+  photo/texte** (`.pole-section`, classe `reverse` pour inverser le sens),
+  le même pattern étant réutilisé à l'identique sur l'Accueil (aperçu) et
+  sur Nos services (détail) — pas de numérotation 01/02/03 : ce ne sont pas
+  des étapes séquentielles mais 3 piliers parallèles.
 - Icônes linéaires (trait constant 2px, coins légèrement arrondis) dessinées
-  pour chaque pôle plutôt que des pictos stock.
+  sur mesure plutôt que des pictos stock, utilisées en tête de section sur
+  Nos services.
+- **Texte justifié dans les blocs/cartes** (règle permanente depuis
+  05/08/2026) : tout paragraphe à l'intérieur d'un composant "carte" —
+  `.pole-section p`, `.value-card p`, `.pole-card p` — est en
+  `text-align: justify`, pour une harmonie visuelle entre les blocs. Ne
+  s'applique pas au texte courant de page (hero, intros de section).
 
-## Images (ajouté 05/08/2026)
-Pas de photothèque AXOSU existante → photos Unsplash (licence gratuite,
-usage commercial autorisé), choisies une par une après inspection visuelle
-(pas de sélection à l'aveugle sur le seul texte alternatif) :
-- **Hero (Accueil)** : `hero-focus.jpg`, professionnel concentré sur un
-  ordinateur portable — pose la thèse "technologie + rigueur" dès l'entrée.
-- **Nos pôles** : une photo par pôle, mise en page alternée texte/photo
-  (`.pole-section`, classe `reverse` pour inverser le sens) —
-  `pole-edutech.jpg`, `pole-commerce.jpg`, `pole-formation.jpg`.
+## Images (mis à jour 05/08/2026 — refonte V2)
+- **Hero (Accueil)** : portrait de **Mr Patrick D. ATINDEHOU** (Manager &
+  CEO d'AXOSU), `patrick-atindehou-ceo.jpg` — recadré en carré (1191×1191,
+  depuis la source 1321×1191) **sans aucun rognage en haut** (règle
+  permanente sur toute photo de personne : on peut rogner à gauche, à
+  droite et en bas, jamais en haut — sinon effet visuel de "tête coupée").
+  `.hero__media` en `aspect-ratio: 1/1` (réduit par rapport au 4/5 initial,
+  pour que tout le hero tienne dans la hauteur d'écran desktop sans
+  scroll), `.hero__grid` en `align-items: start` (évite un vide au-dessus
+  du titre si une colonne est plus haute que l'autre). Une **légende en
+  overlay "verre dépoli" (glassmorphism)** — `.hero__media-caption`, fond
+  semi-transparent sombre + `backdrop-filter: blur(16px) saturate(160%)`,
+  bordure claire fine, texte blanc — affiche "Mr Patrick D. ATINDEHOU /
+  Manager & CEO AXÔSU" directement sur la photo.
+- **3 axes stratégiques (Accueil + Nos services)** : une photo par axe,
+  fournies par Ruben, mise en page alternée texte/photo (`.pole-section`,
+  classe `reverse` pour inverser le sens) — `edutech.jpg`, `coaching.jpg`,
+  `business-corporate.jpg`. Même trio de photos réutilisé à l'identique
+  sur l'Accueil (aperçu) et sur Nos services (détail), pour la cohérence
+  visuelle entre les deux pages.
 - **À propos** : bandeau de clôture avec `about-cotonou.jpg` en fond +
   voile marine (conforme à la charte §5.3 "jamais de texte sur photo sans
-  fond semi-transparent marine pour le contraste").
+  fond semi-transparent marine pour le contraste") — inchangé depuis la V1.
+- Anciennes photos `hero-focus.jpg`/`hero-focus-v2.jpg` et
+  `pole-edutech.jpg`/`pole-commerce.jpg`/`pole-formation.jpg` : conservées
+  sur le disque (non supprimées) mais **plus référencées** par aucune page
+  depuis la refonte V2.
 Traitement : coins arrondis 16-20px (`.hero__media`, `.pole-section__media`),
 `object-fit: cover`. Fichiers dans `assets/img/`.
 
