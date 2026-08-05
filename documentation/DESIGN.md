@@ -93,12 +93,45 @@ première ligne, avant même la section des 3 pôles.
 - **À propos** : bandeau de clôture avec `about-cotonou.jpg` en fond +
   voile marine (conforme à la charte §5.3 "jamais de texte sur photo sans
   fond semi-transparent marine pour le contraste") — inchangé depuis la V1.
+  Depuis le 05/08/2026, la section "Notre positionnement" est elle aussi un
+  `.pole-section` avec la photo de Mr Patrick D. ATINDEHOU
+  (`patrick-atindehou-ceo.jpg`, même fichier que le hero Accueil, réemployé
+  tel quel), **sans overlay glassmorphism** cette fois (juste la photo en
+  bloc, traitement volontairement plus sobre que le hero). Nouveau
+  modificateur CSS `.pole-section__media--person` (`object-position: center
+  top`) : applique la règle permanente "jamais de rognage en haut d'une
+  photo de personne" même quand `object-fit: cover` doit rogner l'image
+  pour remplir un cadre plus large que haut (le rognage automatique mord
+  alors sur le bas, jamais sur le haut). La section "Notre signature"
+  (Excellence/Innovation/Impact) a aussi reçu 3 icônes SVG dédiées (étoile,
+  ampoule, flèche ascendante), même style que les icônes pôles (trait 2px,
+  dégradé orange→rouge) — nouvelle classe `.value-card__icon`.
 - Anciennes photos `hero-focus.jpg`/`hero-focus-v2.jpg` et
   `pole-edutech.jpg`/`pole-commerce.jpg`/`pole-formation.jpg` : conservées
   sur le disque (non supprimées) mais **plus référencées** par aucune page
   depuis la refonte V2.
 Traitement : coins arrondis 16-20px (`.hero__media`, `.pole-section__media`),
 `object-fit: cover`. Fichiers dans `assets/img/`.
+
+### Favicon (05/08/2026)
+Remplace l'ancien favicon générique (le PNG du logo brut, non optimisé) sur
+les **6 pages** (5 existantes + `404.html`) : `favicon-32.png` (32×32),
+`favicon-16.png` (16×16, fond transparent, générés via Pillow — padding
+carré + redimensionnement LANCZOS depuis `logo-axosu.png` 450×456), et
+`apple-touch-icon.png` (180×180, **fond marine plein** `#0e3a50` — pas
+transparent, pour un bon rendu en icône d'écran d'accueil iOS).
+
+### Page 404 (05/08/2026)
+`code/404.html`, même gabarit header/nav/footer que les autres pages.
+Contenu centré (`.cta-band`), gros "404" en texte dégradé (nouvelle classe
+`.error-404__code`, `background: var(--gradient-warm)` + `background-clip:
+text`), titre rassurant, CTA vers Accueil et Contact. Netlify sert
+automatiquement ce fichier pour toute URL inconnue sur un site statique —
+aucune configuration supplémentaire. Retour d'expérience : `.accent-swoosh`
+est `display:block` avec des marges non-auto (aligné à gauche par défaut,
+correct partout ailleurs sur le site où le texte est aligné à gauche) — il
+fallait une règle `.cta-band .accent-swoosh { margin-left/right: auto }`
+pour le centrer correctement dans un contexte `.cta-band` (texte centré).
 
 ## Bandeaux "cta-band" — variantes (mis à jour 05/08/2026)
 Trois traitements possibles pour la section de clôture avant le footer,
@@ -208,3 +241,11 @@ selon la page :
     (`text-align: justify`) pour une harmonie visuelle des blocs de texte
     — demande de Ruben du 05/08/2026, à reproduire sur tout nouveau bloc
     de ce type.
+- **05/08/2026** — Itération 10 : passage `v2` → `dev` (renommage, aucune
+  suppression sur GitHub — voir `PLAN_PROJET_SITE.md` pour la méthode
+  Git complète), favicon optimisé (32/16/apple-touch-icon, remplace l'ancien
+  PNG brut), page `404.html` créée, page À propos rendue "vivante" (photo
+  de Mr Patrick D. ATINDEHOU sur la section positionnement, 3 icônes SVG sur
+  la section signature). Nouveau fichier `HISTORIQUE-VARIANTES.md` (registre
+  prêt à l'emploi pour de futurs rounds de variantes à faire trancher par le
+  CA AXOSU).
