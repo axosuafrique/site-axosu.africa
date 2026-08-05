@@ -1,0 +1,8 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Documents internes — jamais publiés sur GitHub (demande de Ruben du 05/08/2026)
+PLAN_PROJET_SITE.md
+documentation/contenu-textes.md
