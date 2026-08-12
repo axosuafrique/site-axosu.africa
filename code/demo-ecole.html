@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Contact — AXOSU SARL</title>
-<meta name="description" content="Contactez AXÔSU à Cotonou, Bénin : projet, coaching, partenariat, ou toute autre question." />
+<title>Démo pour écoles — AXOSU SARL</title>
+<meta name="description" content="Réservez une démonstration de la solution de gestion scolaire AXÔSU : suivi des élèves, communication école-parents, programme pilote en cours." />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
@@ -32,7 +32,7 @@
         <li><a href="a-propos.html">À propos</a></li>
         <li><a href="nos-services.html">Nos services</a></li>
         <li><a href="equipe.html">Notre équipe</a></li>
-        <li><a href="contact.html" class="btn btn-contact" aria-current="page">Nous contacter</a></li>
+        <li><a href="contact.html" class="btn btn-contact">Nous contacter</a></li>
       </ul>
     </nav>
   </div>
@@ -42,63 +42,47 @@
 
   <section class="section section--tight">
     <div class="container">
-      <p class="eyebrow">Contact</p>
-      <h1>Un projet. Une ambition. Une opportunité.</h1>
+      <span class="badge-fomo">Programme pilote · places limitées</span>
+      <p class="eyebrow">Écoles &amp; établissements</p>
+      <h1>Une gestion scolaire plus complète, pensée pour vos réalités</h1>
       <span class="accent-swoosh" aria-hidden="true"></span>
-      <p style="color:var(--support); font-size:1.1rem">Contactez-nous et construisons ensemble des solutions à fort impact.</p>
+      <p style="color:var(--support); font-size:1.1rem; max-width:70ch">Suivi intelligent des élèves, communication fluide avec les parents, emploi du temps et paiements centralisés&nbsp;: la solution AXÔSU est actuellement en phase de test auprès d'un nombre limité d'établissements. Réservez votre démonstration pour en faire partie.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container contact-grid">
+  <section class="section section--soft">
+    <div class="container">
+      <p class="eyebrow" style="text-align:center">Réserver une démo</p>
+      <h2 style="text-align:center">On vous recontacte pour organiser une présentation</h2>
+      <span class="accent-swoosh" aria-hidden="true" style="margin-left:auto; margin-right:auto;"></span>
 
-      <div>
-        <h2 style="font-size:1.3rem">Coordonnées</h2>
-        <dl class="contact-info">
-          <dt>Email</dt>
-          <dd><a href="mailto:info@axosu.online">info@axosu.online</a></dd>
-          <dt>Téléphone</dt>
-          <dd><a href="tel:+22901556955">+229 01 55 65 95 55</a></dd>
-          <dt>Localisation</dt>
-          <dd>Cotonou, République du Bénin</dd>
-        </dl>
-      </div>
-
-      <div>
-        <!--
-          Étape à venir (après déploiement, phase 5 du plan) : brancher un
-          service de formulaire statique (Web3Forms/Formspree). Quand ce
-          sera fait, retirer le texte .field-note ci-dessous, ajouter une
-          case à cocher "être recontacté", et ajouter les pages RGPD/
-          mentions légales en footer (demande de Ruben du 05/08/2026).
-        -->
-        <form action="mailto:info@axosu.online" method="post" enctype="text/plain">
-          <div class="field">
-            <label for="name">Nom</label>
-            <input type="text" id="name" name="Nom" required />
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="Email" required />
-          </div>
-          <div class="field">
-            <label for="subject">Sujet</label>
-            <select id="subject" name="Sujet">
-              <option>Projet</option>
-              <option>Coaching</option>
-              <option>Partenariat</option>
-              <option>Autre</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="Message" required></textarea>
-          </div>
-          <p class="field-note">En cliquant sur « Envoyer le message », votre messagerie s'ouvre avec ce message prêt à envoyer.</p>
-          <button type="submit" class="btn btn-primary">Envoyer le message</button>
-        </form>
-      </div>
-
+      <form name="demo-ecole" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="merci.html" class="form-narrow">
+        <input type="hidden" name="form-name" value="demo-ecole" />
+        <p class="hidden" style="position:absolute; left:-9999px;">
+          <label>Ne pas remplir&nbsp;: <input name="bot-field" /></label>
+        </p>
+        <div class="field">
+          <label for="de-etab">Nom de l'établissement</label>
+          <input type="text" id="de-etab" name="Établissement" required />
+        </div>
+        <div class="field">
+          <label for="de-contact">Nom du contact</label>
+          <input type="text" id="de-contact" name="Contact" required />
+        </div>
+        <div class="field">
+          <label for="de-email">Email</label>
+          <input type="email" id="de-email" name="Email" required />
+        </div>
+        <div class="field">
+          <label for="de-tel">Téléphone</label>
+          <input type="tel" id="de-tel" name="Téléphone" required />
+        </div>
+        <div class="field">
+          <label for="de-effectif">Nombre d'élèves (approximatif)</label>
+          <input type="text" id="de-effectif" name="Effectif" />
+        </div>
+        <button type="submit" class="btn btn-contact">Réserver ma démo</button>
+      </form>
     </div>
   </section>
 
@@ -129,7 +113,7 @@
         <ul>
           <li><a href="evenement-decembre.html">Événement décembre</a></li>
           <li><a href="app.html">App AXOSU</a></li>
-          <li><a href="demo-ecole.html">Démo pour écoles</a></li>
+          <li><a href="demo-ecole.html" aria-current="page">Démo pour écoles</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="la-clinic.html">La Clinic</a></li>
         </ul>
