@@ -574,6 +574,125 @@ select:focus-visible {
   text-justify: inter-word;
 }
 
+/* ---------- Équipe (page equipe.html) ---------- */
+.team-group + .team-group {
+  margin-top: 56px;
+}
+.team-group__title {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+.team-group__note {
+  color: var(--support);
+  font-size: 0.92rem;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.team-card {
+  background: var(--white);
+  padding: 28px 24px;
+  border: 1px solid var(--line);
+  text-align: center;
+}
+.team-card__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-warm);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.team-card__name {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.team-card__role {
+  color: var(--orange);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.team-card__note {
+  color: var(--support);
+  font-size: 0.88rem;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* ---------- Réseaux du fondateur (À propos) ---------- */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 16px;
+  padding: 0;
+  list-style: none;
+}
+.social-links a {
+  color: var(--marine);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--orange-light);
+}
+.social-links a:hover {
+  border-bottom-color: var(--red);
+}
+
+/* ---------- Méthode MBS (Nos services) ---------- */
+.mbs-callout {
+  background: var(--marine-soft);
+  border-left: 3px solid var(--orange);
+  padding: 30px 32px;
+  margin-top: 28px;
+}
+.mbs-callout h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+.mbs-callout p {
+  color: var(--support);
+  margin-bottom: 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* ---------- Partenaires (Nos services) ---------- */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.partner-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 26px 24px;
+}
+.partner-card__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--marine);
+  margin-bottom: 8px;
+}
+.partner-card p {
+  color: var(--support);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 /* ---------- Bandeau CTA ---------- */
 .cta-band {
   text-align: center;
@@ -782,6 +901,8 @@ select:focus-visible {
 
   .poles-grid,
   .values-grid,
+  .team-grid,
+  .partners-grid,
   .pole-section {
     grid-template-columns: 1fr;
   }
