@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>App AXOSU — bientôt disponible — AXOSU SARL</title>
-<meta name="description" content="L'application mobile AXOSU arrive bientôt. Rejoignez la liste d'attente et la communauté pour être parmi les premiers informés." />
+<meta name="description" content="Suivi scolaire, lien direct avec l'école, espace culturel africain : découvrez l'application mobile AXOSU et rejoignez la liste d'attente avant son lancement." />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
@@ -31,6 +31,7 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="a-propos.html">À propos</a></li>
         <li><a href="nos-services.html">Nos services</a></li>
+        <li><a href="nos-activites.html">Nos activités</a></li>
         <li><a href="equipe.html">Notre équipe</a></li>
         <li><a href="contact.html" class="btn btn-contact">Nous contacter</a></li>
       </ul>
@@ -42,21 +43,67 @@
 
   <section class="section section--tight">
     <div class="container">
-      <span class="badge-fomo">Bientôt disponible</span>
-      <p class="eyebrow">Application AXOSU</p>
-      <h1>L'app AXOSU arrive bientôt</h1>
-      <span class="accent-swoosh" aria-hidden="true"></span>
-      <p style="color:var(--support); font-size:1.1rem; max-width:70ch">Le compagnon mobile de notre plateforme EduTech AXÔSU&nbsp;: suivi scolaire, échanges école-parents et accès à votre espace personnel, directement depuis votre téléphone. En finalisation — rejoignez la liste d'attente pour être parmi les premiers informés du lancement.</p>
+      <div class="pole-section">
+        <div>
+          <div><span class="badge-fomo">Bientôt disponible</span></div>
+          <p class="eyebrow">Application AXOSU</p>
+          <h1>Toute la vie scolaire de votre enfant, dans votre poche</h1>
+          <span class="accent-swoosh" aria-hidden="true"></span>
+          <p style="color:var(--support); font-size:1.1rem">L'app AXOSU est le compagnon mobile de notre plateforme EduTech&nbsp;: suivi scolaire, échanges directs avec l'école, culture africaine et espace personnel sécurisé. Elle est en finalisation — rejoignez la liste d'attente pour être parmi les premiers informés du lancement.</p>
+          <div class="hero__actions">
+            <a href="#liste-attente" class="btn btn-primary">Rejoindre la liste d'attente</a>
+          </div>
+        </div>
+        <div class="pole-section__media">
+          <img src="assets/img/pole-edutech.jpg" alt="L'équipe AXÔSU au travail sur l'application" loading="eager" />
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section section--soft">
     <div class="container">
-      <p class="eyebrow" style="text-align:center">Liste d'attente</p>
+      <p class="eyebrow">Présentation</p>
+      <h2>Ce que vous trouverez dans l'application</h2>
+      <span class="accent-swoosh" aria-hidden="true"></span>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Suivi scolaire intelligent</h3>
+          <p>Notes, absences, emploi du temps et progression de votre enfant, mis à jour par l'établissement — sans avoir à courir après l'information.</p>
+        </div>
+        <div class="value-card">
+          <h3>Le lien direct avec l'école</h3>
+          <p>Messages, annonces et rendez-vous au même endroit&nbsp;: fini les cahiers de correspondance perdus et les informations qui n'arrivent jamais.</p>
+        </div>
+        <div class="value-card">
+          <h3>Un espace culturel africain</h3>
+          <p>Contenus, récits et patrimoine du continent, pensés pour transmettre aux enfants ce qui ne s'apprend pas seulement en classe.</p>
+        </div>
+        <div class="value-card">
+          <h3>Un espace personnel sécurisé</h3>
+          <p>Vos données de famille, protégées, avec un accès privé au coaching et au bien-être proposés par AXÔSU.</p>
+        </div>
+        <div class="value-card">
+          <h3>Le marché culturel</h3>
+          <p>Un espace décentralisé où les talents et les artisans du continent valorisent leur travail auprès des familles.</p>
+        </div>
+        <div class="value-card">
+          <h3>Les échanges en famille</h3>
+          <p>Des espaces d'échange dédiés, pour que parents et enfants gardent un fil de discussion sain autour de la scolarité.</p>
+        </div>
+      </div>
+      <p style="color:var(--support); font-size:0.9rem; margin-top:28px;"><em>Captures d'écran de l'application et date de lancement à fournir par l'équipe technique avant la mise en ligne définitive.</em></p>
+    </div>
+  </section>
+
+  <section class="section" id="liste-attente">
+    <div class="container">
+      <p class="eyebrow" style="display:block; text-align:center">Liste d'attente</p>
       <h2 style="text-align:center">Soyez averti·e dès le lancement</h2>
       <span class="accent-swoosh" aria-hidden="true" style="margin-left:auto; margin-right:auto;"></span>
+      <p style="color:var(--support); text-align:center; max-width:62ch; margin:0 auto;">Les inscrits sont prévenus avant l'ouverture publique et reçoivent l'invitation aux communautés privées AXOSU.</p>
 
-      <form name="liste-attente-app" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="merci.html" class="form-narrow">
+      <form name="liste-attente-app" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="merci-app.html" class="form-narrow">
         <input type="hidden" name="form-name" value="liste-attente-app" />
         <p class="hidden" style="position:absolute; left:-9999px;">
           <label>Ne pas remplir&nbsp;: <input name="bot-field" /></label>
@@ -69,12 +116,21 @@
           <label for="app-email">Email</label>
           <input type="email" id="app-email" name="Email" required />
         </div>
+        <div class="field">
+          <label for="app-profil">Vous êtes</label>
+          <select id="app-profil" name="Profil">
+            <option>Parent d'élève</option>
+            <option>Établissement scolaire</option>
+            <option>Enseignant·e</option>
+            <option>Autre</option>
+          </select>
+        </div>
         <button type="submit" class="btn btn-contact">Rejoindre la liste d'attente</button>
       </form>
 
       <div class="mbs-callout" style="max-width:520px; margin:32px auto 0;">
         <h3>Rejoindre la communauté AXOSU</h3>
-        <p>Liens vers les chaînes et groupes privés AXOSU (WhatsApp/Telegram) — à venir, dès leur création.</p>
+        <p>Liens vers les chaînes et groupes privés AXOSU (WhatsApp/Telegram) — à fournir par l'équipe, dès leur création.</p>
       </div>
     </div>
   </section>
@@ -96,6 +152,7 @@
           <li><a href="index.html">Accueil</a></li>
           <li><a href="a-propos.html">À propos</a></li>
           <li><a href="nos-services.html">Nos services</a></li>
+          <li><a href="nos-activites.html">Nos activités</a></li>
           <li><a href="equipe.html">Notre équipe</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="rejoindre.html">Rejoindre AXOSU</a></li>
@@ -107,6 +164,7 @@
           <li><a href="evenement-decembre.html">Événement décembre</a></li>
           <li><a href="app.html" aria-current="page">App AXOSU</a></li>
           <li><a href="demo-ecole.html">Démo pour écoles</a></li>
+          <li><a href="devis.html">Demander un devis</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="la-clinic.html">La Clinic</a></li>
         </ul>

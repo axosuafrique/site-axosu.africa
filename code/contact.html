@@ -31,6 +31,7 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="a-propos.html">À propos</a></li>
         <li><a href="nos-services.html">Nos services</a></li>
+        <li><a href="nos-activites.html">Nos activités</a></li>
         <li><a href="equipe.html">Notre équipe</a></li>
         <li><a href="contact.html" class="btn btn-contact" aria-current="page">Nous contacter</a></li>
       </ul>
@@ -65,14 +66,11 @@
       </div>
 
       <div>
-        <!--
-          Étape à venir (après déploiement, phase 5 du plan) : brancher un
-          service de formulaire statique (Web3Forms/Formspree). Quand ce
-          sera fait, retirer le texte .field-note ci-dessous, ajouter une
-          case à cocher "être recontacté", et ajouter les pages RGPD/
-          mentions légales en footer (demande de Ruben du 05/08/2026).
-        -->
-        <form action="mailto:info@axosu.online" method="post" enctype="text/plain">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="merci-contact.html">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden" style="position:absolute; left:-9999px;">
+            <label>Ne pas remplir&nbsp;: <input name="bot-field" /></label>
+          </p>
           <div class="field">
             <label for="name">Nom</label>
             <input type="text" id="name" name="Nom" required />
@@ -94,8 +92,8 @@
             <label for="message">Message</label>
             <textarea id="message" name="Message" required></textarea>
           </div>
-          <p class="field-note">En cliquant sur « Envoyer le message », votre messagerie s'ouvre avec ce message prêt à envoyer.</p>
           <button type="submit" class="btn btn-primary">Envoyer le message</button>
+          <p class="field-note">Nous répondons sous 48&nbsp;heures ouvrées.</p>
         </form>
       </div>
 
@@ -119,6 +117,7 @@
           <li><a href="index.html">Accueil</a></li>
           <li><a href="a-propos.html">À propos</a></li>
           <li><a href="nos-services.html">Nos services</a></li>
+          <li><a href="nos-activites.html">Nos activités</a></li>
           <li><a href="equipe.html">Notre équipe</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="rejoindre.html">Rejoindre AXOSU</a></li>
@@ -130,6 +129,7 @@
           <li><a href="evenement-decembre.html">Événement décembre</a></li>
           <li><a href="app.html">App AXOSU</a></li>
           <li><a href="demo-ecole.html">Démo pour écoles</a></li>
+          <li><a href="devis.html">Demander un devis</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="la-clinic.html">La Clinic</a></li>
         </ul>

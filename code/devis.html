@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Blog — AXOSU SARL</title>
-<meta name="description" content="Les articles AXÔSU sur l'éducation, le coaching et le business en Afrique — et le guide AXOSU actuellement en vente." />
+<title>Demander un devis — AXOSU SARL</title>
+<meta name="description" content="Demandez un devis à AXÔSU SARL : formation en entreprise, coaching, plateforme EduTech, équipement numérique ou projet stratégique." />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
@@ -43,31 +43,59 @@
 
   <section class="section section--tight">
     <div class="container">
-      <p class="eyebrow">Blog</p>
-      <h1>Idées, méthodes et ressources AXÔSU</h1>
+      <p class="eyebrow">Business Corporate</p>
+      <h1>Demander un devis</h1>
       <span class="accent-swoosh" aria-hidden="true"></span>
-      <p style="color:var(--support); font-size:1.1rem; max-width:70ch">Des articles sur l'éducation, le coaching et le business en Afrique, écrits par l'équipe AXÔSU.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="blog-grid">
-        <a href="article-guide-axosu.html" class="blog-card">
-          <p class="blog-card__eyebrow">Guide AXOSU</p>
-          <h3>Le guide AXOSU, votre premier pas vers la méthode MBS</h3>
-          <p>Présentation du guide actuellement en vente — de quoi il parle, et pour qui.</p>
-        </a>
-      </div>
+      <p style="color:var(--support); font-size:1.1rem; max-width:70ch">Décrivez votre besoin en quelques lignes. Nous revenons vers vous avec une proposition chiffrée et un calendrier réaliste — sans engagement de votre part.</p>
     </div>
   </section>
 
   <section class="section section--soft">
     <div class="container">
-      <div class="mbs-callout">
-        <h3>Guide AXOSU — en vente actuellement</h3>
-        <p>Titre exact, prix et lien d'achat à confirmer avec Ruben avant mise en ligne — cette section sera enrichie dès réception des informations.</p>
-      </div>
+      <form name="devis" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="merci-devis.html" class="form-narrow">
+        <input type="hidden" name="form-name" value="devis" />
+        <p class="hidden" style="position:absolute; left:-9999px;">
+          <label>Ne pas remplir&nbsp;: <input name="bot-field" /></label>
+        </p>
+        <div class="field">
+          <label for="dv-orga">Organisation</label>
+          <input type="text" id="dv-orga" name="Organisation" required />
+        </div>
+        <div class="field">
+          <label for="dv-contact">Nom du contact</label>
+          <input type="text" id="dv-contact" name="Contact" required />
+        </div>
+        <div class="field">
+          <label for="dv-email">Email</label>
+          <input type="email" id="dv-email" name="Email" required />
+        </div>
+        <div class="field">
+          <label for="dv-tel">Téléphone</label>
+          <input type="tel" id="dv-tel" name="Téléphone" required />
+        </div>
+        <div class="field">
+          <label for="dv-besoin">Nature du besoin</label>
+          <select id="dv-besoin" name="Besoin" required>
+            <option value="">Choisissez…</option>
+            <option>Formation ou atelier en entreprise</option>
+            <option>Coaching de dirigeant ou d'équipe</option>
+            <option>Plateforme EduTech pour un établissement</option>
+            <option>Équipement numérique</option>
+            <option>Projet stratégique / partenariat d'affaires</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="dv-detail">Votre projet en quelques lignes</label>
+          <textarea id="dv-detail" name="Projet" rows="6" required></textarea>
+        </div>
+        <div class="field">
+          <label for="dv-delai">Échéance souhaitée (facultatif)</label>
+          <input type="text" id="dv-delai" name="Échéance" placeholder="Ex. : avant la rentrée de janvier" />
+        </div>
+        <button type="submit" class="btn btn-contact">Envoyer ma demande</button>
+        <p class="field-note">Nous répondons sous 48 heures ouvrées.</p>
+      </form>
     </div>
   </section>
 
@@ -100,8 +128,8 @@
           <li><a href="evenement-decembre.html">Événement décembre</a></li>
           <li><a href="app.html">App AXOSU</a></li>
           <li><a href="demo-ecole.html">Démo pour écoles</a></li>
-          <li><a href="devis.html">Demander un devis</a></li>
-          <li><a href="blog.html" aria-current="page">Blog</a></li>
+          <li><a href="devis.html" aria-current="page">Demander un devis</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="la-clinic.html">La Clinic</a></li>
         </ul>
       </div>

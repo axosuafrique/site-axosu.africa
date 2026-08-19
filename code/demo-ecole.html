@@ -31,6 +31,7 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="a-propos.html">À propos</a></li>
         <li><a href="nos-services.html">Nos services</a></li>
+        <li><a href="nos-activites.html">Nos activités</a></li>
         <li><a href="equipe.html">Notre équipe</a></li>
         <li><a href="contact.html" class="btn btn-contact">Nous contacter</a></li>
       </ul>
@@ -42,21 +43,92 @@
 
   <section class="section section--tight">
     <div class="container">
-      <span class="badge-fomo">Programme pilote · places limitées</span>
-      <p class="eyebrow">Écoles &amp; établissements</p>
-      <h1>Une gestion scolaire plus complète, pensée pour vos réalités</h1>
-      <span class="accent-swoosh" aria-hidden="true"></span>
-      <p style="color:var(--support); font-size:1.1rem; max-width:70ch">Suivi intelligent des élèves, communication fluide avec les parents, emploi du temps et paiements centralisés&nbsp;: la solution AXÔSU est actuellement en phase de test auprès d'un nombre limité d'établissements. Réservez votre démonstration pour en faire partie.</p>
+      <div class="pole-section">
+        <div>
+          <div><span class="badge-fomo">Programme pilote · places limitées</span></div>
+          <p class="eyebrow">Écoles &amp; établissements</p>
+          <h1>Une gestion scolaire plus complète, pensée pour vos réalités</h1>
+          <span class="accent-swoosh" aria-hidden="true"></span>
+          <p style="color:var(--support); font-size:1.1rem">Suivi intelligent des élèves, communication fluide avec les parents, emploi du temps et paiements centralisés&nbsp;: la solution AXÔSU est actuellement en phase de test auprès d'un nombre limité d'établissements. Réservez votre démonstration pour en faire partie.</p>
+          <div class="hero__actions">
+            <a href="#reserver" class="btn btn-primary">Réserver une démo</a>
+          </div>
+        </div>
+        <div class="pole-section__media">
+          <img src="assets/img/edutech.jpg" alt="Plateforme EduTech AXÔSU en usage dans un établissement" loading="eager" />
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section section--soft">
     <div class="container">
-      <p class="eyebrow" style="text-align:center">Réserver une démo</p>
+      <p class="eyebrow">La plateforme</p>
+      <h2>Ce que la solution AXÔSU met entre vos mains</h2>
+      <span class="accent-swoosh" aria-hidden="true"></span>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Suivi des élèves</h3>
+          <p>Notes, absences, comportement et progression, saisis une fois et consultables par l'équipe pédagogique comme par les parents.</p>
+        </div>
+        <div class="value-card">
+          <h3>Relation avec les parents</h3>
+          <p>Annonces, bulletins et messages transmis directement dans l'application des familles — plus de courriers perdus entre l'école et la maison.</p>
+        </div>
+        <div class="value-card">
+          <h3>Emploi du temps &amp; vie scolaire</h3>
+          <p>Planning des classes, salles et enseignants, avec les changements répercutés immédiatement auprès de tous les concernés.</p>
+        </div>
+        <div class="value-card">
+          <h3>Paiements centralisés</h3>
+          <p>Suivi des scolarités et des règlements au même endroit, avec un état clair de ce qui est payé et de ce qui reste dû.</p>
+        </div>
+        <div class="value-card">
+          <h3>Application mobile pour les familles</h3>
+          <p>L'app AXOSU accompagne la plateforme côté parents. <a href="app.html">Découvrir l'application</a>.</p>
+        </div>
+        <div class="value-card">
+          <h3>Équipement possible</h3>
+          <p>Grâce à nos partenariats industriels, nous pouvons aussi équiper votre établissement en ordinateurs, tablettes et écrans.</p>
+        </div>
+      </div>
+      <p style="color:var(--support); font-size:0.9rem; margin-top:28px;"><em>Captures d'écran de la plateforme et tarifs à fournir par l'équipe avant la mise en ligne définitive.</em></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Comment se passe la démo</p>
+      <h2>Trois étapes, sans engagement</h2>
+      <span class="accent-swoosh" aria-hidden="true"></span>
+      <ol class="steps-list">
+        <li>
+          <h3>Vous remplissez le formulaire</h3>
+          <p>Quelques informations sur votre établissement suffisent pour que nous préparions une présentation utile plutôt que générique.</p>
+        </li>
+        <li>
+          <h3>Nous vous rappelons sous 48&nbsp;heures</h3>
+          <p>Un échange court pour comprendre votre organisation actuelle et fixer la date de la démonstration.</p>
+        </li>
+        <li>
+          <h3>Démonstration adaptée à votre établissement</h3>
+          <p>Nous montrons la plateforme avec vos cas réels&nbsp;: vos classes, vos effectifs, votre façon de communiquer avec les parents.</p>
+        </li>
+        <li>
+          <h3>Vous décidez</h3>
+          <p>Si cela vous convient, nous vous proposons d'intégrer le programme pilote. Sinon, l'échange s'arrête là — aucun engagement.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--soft" id="reserver">
+    <div class="container">
+      <p class="eyebrow" style="display:block; text-align:center">Réserver une démo</p>
       <h2 style="text-align:center">On vous recontacte pour organiser une présentation</h2>
       <span class="accent-swoosh" aria-hidden="true" style="margin-left:auto; margin-right:auto;"></span>
 
-      <form name="demo-ecole" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="merci.html" class="form-narrow">
+      <form name="demo-ecole" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="merci-demo.html" class="form-narrow">
         <input type="hidden" name="form-name" value="demo-ecole" />
         <p class="hidden" style="position:absolute; left:-9999px;">
           <label>Ne pas remplir&nbsp;: <input name="bot-field" /></label>
@@ -103,6 +175,7 @@
           <li><a href="index.html">Accueil</a></li>
           <li><a href="a-propos.html">À propos</a></li>
           <li><a href="nos-services.html">Nos services</a></li>
+          <li><a href="nos-activites.html">Nos activités</a></li>
           <li><a href="equipe.html">Notre équipe</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="rejoindre.html">Rejoindre AXOSU</a></li>
@@ -114,6 +187,7 @@
           <li><a href="evenement-decembre.html">Événement décembre</a></li>
           <li><a href="app.html">App AXOSU</a></li>
           <li><a href="demo-ecole.html" aria-current="page">Démo pour écoles</a></li>
+          <li><a href="devis.html">Demander un devis</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="la-clinic.html">La Clinic</a></li>
         </ul>

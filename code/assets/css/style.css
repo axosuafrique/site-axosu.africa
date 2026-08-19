@@ -575,59 +575,52 @@ select:focus-visible {
 }
 
 /* ---------- Équipe (page equipe.html) ---------- */
-.team-group + .team-group {
-  margin-top: 56px;
-}
-.team-group__title {
-  font-size: 1.2rem;
-  margin-bottom: 4px;
-}
-.team-group__note {
-  color: var(--support);
-  font-size: 0.92rem;
-  margin-top: 0;
-  margin-bottom: 24px;
-}
+/* Flex plutôt que grid : avec 5 membres, la dernière rangée reste centrée
+   au lieu de se coller à gauche. */
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 40px;
 }
 .team-card {
+  flex: 0 1 316px;
   background: var(--white);
-  padding: 28px 24px;
   border: 1px solid var(--line);
   text-align: center;
+  padding-bottom: 26px;
+  overflow: hidden;
 }
-.team-card__avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  margin: 0 auto 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--gradient-warm);
-  color: var(--white);
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.1rem;
+.team-card__photo {
+  display: block;
+  width: 100%;
+  /* "height: auto" est obligatoire : sans lui, l'attribut height="640" du HTML
+     fixe la hauteur et l'aspect-ratio ne s'applique pas. */
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  margin-bottom: 20px;
 }
 .team-card__name {
   font-weight: 600;
-  margin-bottom: 2px;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+  padding: 0 18px;
 }
 .team-card__role {
   color: var(--orange);
   font-size: 0.88rem;
   font-weight: 600;
-  margin-bottom: 8px;
-}
-.team-card__note {
-  color: var(--support);
-  font-size: 0.88rem;
-  font-style: italic;
   margin-bottom: 0;
+  padding: 0 18px;
+}
+.team-note {
+  color: var(--support);
+  font-size: 0.92rem;
+  text-align: center;
+  margin-top: 34px;
 }
 
 /* ---------- Réseaux du fondateur (À propos) ---------- */
@@ -667,30 +660,39 @@ select:focus-visible {
   text-justify: inter-word;
 }
 
-/* ---------- Partenaires (Nos services) ---------- */
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* ---------- Partenaires : bandeau de logos ---------- */
+.logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 24px;
   margin-top: 40px;
 }
-.partner-card {
+.logo-tile {
+  flex: 0 0 auto;
+  width: 240px;
+  height: 130px;
   background: var(--white);
   border: 1px solid var(--line);
-  padding: 26px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
-.partner-card__name {
+.logo-tile img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.logo-tile__name {
   font-family: var(--font-display);
   font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
   color: var(--marine);
-  margin-bottom: 8px;
-}
-.partner-card p {
-  color: var(--support);
-  font-size: 0.95rem;
-  margin-bottom: 0;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: center;
+  margin: 0;
 }
 
 /* ---------- Étiquette FOMO ("bientôt disponible", etc.) ---------- */
@@ -743,6 +745,112 @@ select:focus-visible {
   color: var(--support);
   font-size: 0.95rem;
   margin-bottom: 0;
+}
+.clinic-card__illu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 128px;
+  width: calc(100% + 52px);
+  margin: -30px -26px 24px;
+  background: var(--gradient-warm);
+}
+.clinic-card__illu svg {
+  width: 58px;
+  height: 58px;
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Bandeau image pleine largeur (illustration de section) ---------- */
+.section-media {
+  margin-top: 40px;
+  overflow: hidden;
+}
+.section-media img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+/* ---------- Infos pratiques (page événement) ---------- */
+.event-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin: 40px 0 0;
+}
+.event-fact {
+  background: var(--white);
+  padding: 26px 24px;
+}
+.event-fact dt {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 6px;
+}
+.event-fact dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--marine);
+}
+.event-fact dd small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.84rem;
+  color: var(--support);
+  margin-top: 4px;
+}
+
+/* ---------- Programme numéroté (événement, démo) ---------- */
+.steps-list {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.steps-list li {
+  counter-increment: step;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 26px 26px 26px 74px;
+  position: relative;
+}
+.steps-list li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 26px;
+  top: 26px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.steps-list h3 {
+  font-size: 1.02rem;
+  margin-bottom: 6px;
+}
+.steps-list p {
+  color: var(--support);
+  font-size: 0.94rem;
+  margin-bottom: 0;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* ---------- Blog ---------- */
@@ -896,6 +1004,10 @@ article.blog-post p + p {
   color: var(--support);
   margin-top: -6px;
 }
+/* Le -6px vise une note placée AVANT le bouton ; après, il la fait chevaucher. */
+.btn + .field-note {
+  margin-top: 14px;
+}
 
 /* ---------- Footer ---------- */
 .site-footer {
@@ -998,12 +1110,15 @@ article.blog-post p + p {
 
   .poles-grid,
   .values-grid,
-  .team-grid,
-  .partners-grid,
   .clinic-grid,
   .blog-grid,
+  .event-facts,
+  .steps-list,
   .pole-section {
     grid-template-columns: 1fr;
+  }
+  .section-media img {
+    height: 220px;
   }
   .pole-section.reverse .pole-section__media {
     order: 0;
