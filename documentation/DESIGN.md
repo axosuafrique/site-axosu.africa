@@ -246,3 +246,41 @@ selon la page :
   la section signature). Nouveau fichier `HISTORIQUE-VARIANTES.md` (registre
   prêt à l'emploi pour de futurs rounds de variantes à faire trancher par le
   CA AXOSU).
+
+- **19/08/2026** — **V3 en production.** Le site passe de 6 à 26 pages : la
+  direction artistique ne change pas, mais elle gagne six composants, tous
+  définis dans `assets/css/style.css` et réutilisables tels quels.
+  - **`.team-grid` / `.team-card`** — l'équipe, à plat, sans catégorisation
+    (demande du Conseil d'Administration). Portrait carré 640 px,
+    `object-position: center top`.
+    🔴 **Piège payé** : l'attribut HTML `height="640"` **neutralise**
+    `aspect-ratio: 1/1` — c'est une indication de présentation qui fixe la
+    hauteur. Il faut un `height: auto` explicite en CSS, sinon les portraits
+    s'étirent. Le commentaire est resté dans le CSS.
+  - **`.marquee` / `.marquee__track`** — bandeau d'images qui défile en
+    continu. Piste **dupliquée** et translation de 0 à −50 % : la boucle est
+    invisible. `.marquee--right` inverse le sens. **Le survol arrête le
+    défilement** (`animation-play-state: paused` sur `:hover` *et*
+    `:focus-within` — le second rend la pause atteignable au clavier et
+    mesurable en test). Bords fondus au `mask-image`.
+  - **`.gallery`** — galerie en maçonnerie par `columns: 3` +
+    `break-inside: avoid`. Zéro JavaScript, contrairement aux grilles
+    maçonnées habituelles.
+  - **`.timeline-head` / `.timeline-year`** — l'en-tête d'une étape de
+    chronologie : année, titre et bouton sur une même ligne, barre verticale
+    en dégradé chaud à gauche.
+  - **`.price-grid` / `.price-card--prestige`** — deux niveaux de tarif côte
+    à côte, le prestige souligné par la bordure orange et une ombre chaude.
+  - **`.app-demo`** et **`.poster`** — la vidéo verticale de démonstration
+    présentée en colonne étroite face au texte ; l'affiche d'un événement
+    montrée **entière**, jamais rognée (`.pole-section__media--entier`,
+    `object-fit: contain`) : une affiche rognée perd son information.
+  - **Responsive** : à 900 px, `.price-grid`, `.app-demo`, `.event-facts` et
+    `.steps-list` passent sur une colonne, `.gallery` sur deux, et les
+    vignettes de bandeau tombent à 150 px de haut.
+  - **Photos de personnes, suite de la règle du 05/08** : Ruben a précisé le
+    cadrage attendu après deux essais refusés. La règle « jamais rogner en
+    haut » restait juste, mais appliquée seule elle décentrait les visages.
+    **Cadrage retenu : le buste large** — un peu d'air au-dessus de la tête,
+    jusqu'au bas du ventre au maximum, la tête occupant environ 30 % de la
+    hauteur du cadre. *« Pro mais large, pour ne pas perdre tout le reste. »*
