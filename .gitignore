@@ -13,3 +13,6 @@ journal/
 process/
 prd/
 Compact/
+
+# Sorties des scripts de controle (verif-interface.py) -- jamais publiees
+code/_captures/
