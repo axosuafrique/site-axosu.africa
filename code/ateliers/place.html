@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>À mardi, 20 h · Votre place est gardée · AXOSU</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/tunnel.css" />
+</head>
+<body>
+
+<header class="entete">
+  <div class="wrap entete__in">
+    <a class="marque" href="https://axosu.africa">
+      <img src="../assets/img/logo-axosu.png" alt="AXOSU" /><span>AXOSU</span>
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <section class="heros">
+    <div class="etroit heros__in">
+      <span class="coche">✓ Votre place est gardée</span>
+      <h1>À mardi, <span class="vif">20 h</span></h1>
+      <p class="heros__accroche">
+        Votre place est réservée pour les trois soirs.
+        <b>Il reste une seule chose à faire maintenant.</b>
+      </p>
+
+      <div class="pique" style="margin-top:2rem">
+        <h2>Rejoignez la communauté WhatsApp</h2>
+        <p>
+          <b>C'est là que le lien de connexion sera envoyé, et nulle part ailleurs.</b>
+          Si vous n'y êtes pas, vous ne recevrez pas le lien.
+        </p>
+      </div>
+
+      <div class="cta cta--centre">
+        <a class="btn btn--chaud btn--large" href="#" id="lien-communaute">Rejoindre la communauté WhatsApp</a>
+        <span class="sous-btn">Le lien vous est aussi envoyé sur votre WhatsApp.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--marine">
+    <div class="etroit">
+      <p class="sur">Notez-les maintenant</p>
+      <h2>Vos trois rendez-vous</h2>
+      <ul class="dates">
+        <li><span class="d">Mardi 15</span> <span>20 h à 22 h · Vos affiches, faites par vous</span></li>
+        <li><span class="d">Mercredi 16</span> <span>20 h à 22 h · Votre contenu, avec le téléphone que vous avez déjà</span></li>
+        <li><span class="d">Jeudi 17</span> <span>20 h à 22 h · Être vue, et vendre</span></li>
+      </ul>
+      <p class="sec__chapo" style="margin-top:1.6rem">
+        Prévoyez votre téléphone chargé et de quoi prendre des notes.
+        <b style="color:#fff">Chaque soir, vous repartez avec quelque chose de fait, pas seulement de compris.</b>
+      </p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="etroit" style="text-align:center">
+      <p class="sur" style="justify-content:center">Vous avez changé d'avis&nbsp;?</p>
+      <h2 style="margin-inline:auto;max-width:24ch">Les replays, les modèles et le groupe VIP restent disponibles</h2>
+      <p class="sec__chapo" style="margin-inline:auto">
+        Tant que le premier atelier n'a pas commencé, vous pouvez encore passer en VIP.
+      </p>
+      <div class="cta cta--centre">
+        <a class="btn btn--fil" href="merci.html">Voir ce que contient la place VIP</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <span class="pied__logo"><img src="../assets/img/logo-axosu.png" alt="AXOSU" /></span>
+    <p>AXOSU · Éduquer • Innover • Transformer.</p>
+    <p>Aucun résultat n'est garanti : ce que vous en tirerez dépend de ce que vous appliquerez.</p>
+  </div>
+</footer>
+
+<script>
+/* Le lien de la communaute n'est pas encore fourni par Ruben.
+   Tant qu'il manque, le bouton renvoie vers le WhatsApp de l'equipe plutot que nulle part. */
+(function(){
+  var LIEN_COMMUNAUTE = ""; /* a remplir des que Ruben donne le lien */
+  var SECOURS = "https://wa.me/2290140112100?text=" +
+    encodeURIComponent("Bonjour, je viens de reserver ma place pour les ateliers des 15, 16 et 17 septembre. Je voudrais le lien de la communaute.");
+  var a = document.getElementById("lien-communaute");
+  a.setAttribute("href", LIEN_COMMUNAUTE || SECOURS);
+  a.setAttribute("target", "_blank");
+  a.setAttribute("rel", "noopener");
+})();
+</script>
+
+</body>
+</html>

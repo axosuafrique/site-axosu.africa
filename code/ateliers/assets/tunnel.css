@@ -1,0 +1,187 @@
+/* Tunnel des ateliers AXOSU, 15-17 septembre 2026.
+   Feuille AUTONOME : elle ne depend pas de assets/css/style.css, parce que le site
+   principal est en cours de refonte dans une autre session. Aucune collision possible. */
+
+:root{
+  --marine:#0E3A50; --marine-fonce:#082A3B; --nuit:#061C27;
+  --orange-clair:#FF9327; --orange:#FF5913; --rouge:#F22612;
+  --encre:#1A1A1A; --support:#6B7280; --blanc:#FFFFFF; --creme:#F5F7F8;
+  --chaud:linear-gradient(90deg,var(--orange-clair),var(--rouge));
+  --r:12px; --r-lg:20px;
+  --bloc:clamp(2.8rem,6vw,5rem);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--nuit);color:var(--blanc);
+  font:400 1.0625rem/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:Montserrat,Inter,sans-serif;font-weight:800;line-height:1.1;letter-spacing:-.02em;margin:0}
+p{margin:0 0 1rem}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1080px,92vw);margin-inline:auto}
+.etroit{width:min(720px,92vw);margin-inline:auto}
+
+/* ---------- entete ---------- */
+.entete{position:sticky;top:0;z-index:40;background:rgba(6,28,39,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.entete__in{display:flex;align-items:center;gap:1rem;height:62px}
+.marque{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.marque img{height:32px;width:auto}
+.marque span{font-family:Montserrat;font-weight:800;letter-spacing:.04em;color:#fff}
+.entete .btn{margin-left:auto}
+
+/* ---------- boutons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  border-radius:var(--r);padding:1.05rem 1.8rem;font-weight:700;font-size:1.05rem;
+  text-decoration:none;border:0;cursor:pointer;transition:transform .18s,box-shadow .18s;
+  font-family:Inter,sans-serif;line-height:1.2;text-align:center;
+}
+.btn--chaud{background:var(--chaud);color:#fff;box-shadow:0 8px 26px rgba(242,38,18,.34)}
+.btn--chaud:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(242,38,18,.44)}
+.btn--fil{border:1.5px solid rgba(255,255,255,.34);color:#fff;background:transparent;font-weight:600}
+.btn--fil:hover{background:rgba(255,255,255,.08)}
+.btn--petit{padding:.7rem 1.2rem;font-size:.95rem}
+.btn--large{width:100%}
+.sous-btn{display:block;text-align:center;font-size:.9rem;color:rgba(255,255,255,.62);margin-top:.6rem}
+.cta{margin:2.2rem 0}
+.cta .btn{min-width:min(420px,100%)}
+.cta--centre{display:flex;flex-direction:column;align-items:center}
+
+/* ---------- surtitre ---------- */
+.sur{
+  font:700 .78rem/1.5 Inter;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--orange-clair);margin:0 0 1rem;
+}
+.sur b{color:#fff;background:var(--chaud);padding:.2rem .6rem;border-radius:100px;letter-spacing:.1em}
+
+/* ---------- heros ---------- */
+.heros{padding:clamp(2rem,5vw,3.6rem) 0 var(--bloc);position:relative;overflow:hidden}
+.heros::before{
+  content:"";position:absolute;right:-18vw;top:-22vw;width:58vw;height:58vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,89,19,.22),transparent 64%);pointer-events:none;
+}
+.heros__in{position:relative;z-index:1}
+.heros h1{font-size:clamp(2.1rem,6vw,3.6rem);margin-bottom:1.2rem}
+.heros h1 .vif{background:var(--chaud);-webkit-background-clip:text;background-clip:text;color:transparent}
+.heros__accroche{font-size:clamp(1.02rem,2.2vw,1.18rem);color:rgba(255,255,255,.82);max-width:52ch}
+.heros__accroche b{color:#fff}
+.badges{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.6rem 0 0;padding:0;list-style:none}
+.badges li{
+  border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:.45rem 1rem;
+  font-size:.88rem;font-weight:600;color:rgba(255,255,255,.9);
+}
+
+/* ---------- sections ---------- */
+.sec{padding:var(--bloc) 0}
+.sec--clair{background:var(--creme);color:var(--encre)}
+.sec--clair h2,.sec--clair h3{color:var(--marine)}
+.sec--clair .sur{color:var(--orange)}
+.sec--marine{background:var(--marine)}
+.sec h2{font-size:clamp(1.6rem,4vw,2.4rem);max-width:24ch}
+.sec__chapo{color:rgba(255,255,255,.72);max-width:58ch;margin-top:1rem}
+.sec--clair .sec__chapo{color:var(--support)}
+
+/* ---------- soirs ---------- */
+.soirs{display:grid;gap:1.2rem;margin-top:2.2rem}
+.soir{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--r-lg);padding:1.6rem;
+}
+.sec--clair .soir{background:var(--blanc);border-color:#E3E8EB;box-shadow:0 2px 14px rgba(14,58,80,.07)}
+.soir__jour{font:700 .8rem/1 Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.soir h3{font-size:1.28rem;margin:.55rem 0 .9rem}
+.soir ul{margin:0;padding-left:1.15rem}
+.soir li{margin-bottom:.5rem}
+.soir li b{color:#fff}
+.sec--clair .soir li b{color:var(--marine)}
+
+/* ---------- bloc qui pique ---------- */
+.pique{background:var(--marine-fonce);border-left:5px solid var(--rouge);border-radius:var(--r-lg);padding:clamp(1.6rem,4vw,2.6rem)}
+.pique h2{font-size:clamp(1.35rem,3.4vw,2rem);max-width:30ch;margin-bottom:1.1rem}
+.pique p{color:rgba(255,255,255,.82);margin:0}
+.pique b{color:#fff}
+
+/* ---------- pour qui ---------- */
+.pourqui{display:grid;gap:1.2rem;margin-top:2rem}
+.pourqui__c{border-radius:var(--r-lg);padding:1.5rem;border:1px solid rgba(255,255,255,.14)}
+.pourqui__c--oui{background:rgba(255,147,39,.09);border-color:rgba(255,147,39,.38)}
+.pourqui__c--non{background:rgba(255,255,255,.04)}
+.pourqui__c h3{font-size:1.08rem;margin-bottom:.8rem}
+.pourqui__c ul{margin:0;padding-left:1.15rem}
+.pourqui__c li{margin-bottom:.45rem;color:rgba(255,255,255,.85)}
+
+/* ---------- formulaire ---------- */
+.form{background:var(--blanc);color:var(--encre);border-radius:var(--r-lg);padding:clamp(1.5rem,4vw,2.2rem);box-shadow:0 24px 60px rgba(0,0,0,.34)}
+.form h2{color:var(--marine);font-size:1.5rem;margin-bottom:.4rem}
+.form__intro{color:var(--support);margin-bottom:1.5rem}
+.champ{margin-bottom:1.1rem}
+.champ label{display:block;font-weight:600;font-size:.92rem;color:var(--marine);margin-bottom:.4rem}
+.champ input{
+  width:100%;padding:.95rem 1rem;border:1.5px solid #D6DDE1;border-radius:var(--r);
+  font:400 1rem Inter,sans-serif;color:var(--encre);background:#fff;
+}
+.champ input:focus{outline:0;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,89,19,.16)}
+.form .sous-btn{color:var(--support)}
+.cache{position:absolute;left:-9999px}
+
+/* ---------- tableau de comparaison ---------- */
+.compare{display:grid;gap:1.2rem;margin-top:2.2rem}
+.offre{border-radius:var(--r-lg);padding:1.6rem;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04)}
+.offre--vip{border:2px solid var(--orange);background:rgba(255,89,19,.09);position:relative}
+.offre__tag{position:absolute;top:-12px;left:1.4rem;background:var(--chaud);color:#fff;font:700 .72rem/1 Inter;letter-spacing:.1em;text-transform:uppercase;padding:.42rem .85rem;border-radius:100px}
+.offre h3{font-size:1.2rem;margin-bottom:.2rem}
+.offre__prix{font-family:Montserrat;font-weight:800;font-size:2rem;margin:.3rem 0 1.1rem}
+.offre--vip .offre__prix{background:var(--chaud);-webkit-background-clip:text;background-clip:text;color:transparent}
+.offre ul{list-style:none;margin:0 0 1.4rem;padding:0}
+.offre li{display:flex;gap:.7rem;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.97rem;line-height:1.45}
+.offre li:last-child{border-bottom:0}
+.offre li .m{flex:none;width:1.2em;font-weight:700}
+.oui{color:#4ADE80}
+.non{color:rgba(255,255,255,.3)}
+.offre li.eteint{color:rgba(255,255,255,.36)}
+
+/* ---------- avantages ---------- */
+.avantages{display:grid;gap:1rem;margin-top:2rem}
+.avantage{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:1.3rem}
+.avantage h3{font-size:1.05rem;color:var(--orange-clair);margin-bottom:.5rem}
+.avantage p{margin:0;color:rgba(255,255,255,.78);font-size:.97rem}
+
+/* ---------- etapes ---------- */
+.etapes{counter-reset:e;list-style:none;margin:2rem 0 0;padding:0}
+.etapes li{counter-increment:e;position:relative;padding:1.1rem 0 1.1rem 3.6rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.etapes li:last-child{border-bottom:0}
+.etapes li::before{
+  content:counter(e);position:absolute;left:0;top:1rem;width:2.4rem;height:2.4rem;
+  border-radius:50%;background:var(--chaud);color:#fff;display:grid;place-items:center;
+  font-family:Montserrat;font-weight:800;font-size:1.05rem;
+}
+.etapes b{color:#fff}
+
+/* ---------- rappel des 3 dates ---------- */
+.dates{display:grid;gap:.8rem;margin-top:1.8rem;padding:0;list-style:none}
+.dates li{display:flex;gap:1rem;align-items:baseline;background:rgba(255,255,255,.05);border-radius:var(--r);padding:.9rem 1.1rem}
+.dates .d{font-family:Montserrat;font-weight:800;color:var(--orange-clair);flex:none;min-width:6.5rem}
+
+/* ---------- pied ---------- */
+.pied{background:var(--marine-fonce);padding:2.6rem 0 2rem;font-size:.92rem;color:rgba(255,255,255,.6)}
+.pied a{color:rgba(255,255,255,.78)}
+.pied__logo{background:#fff;border-radius:var(--r);padding:.45rem .65rem;display:inline-block;margin-bottom:1rem}
+.pied__logo img{height:30px}
+
+/* ---------- confirmation ---------- */
+.coche{display:inline-flex;align-items:center;gap:.6rem;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.4);color:#4ADE80;border-radius:100px;padding:.5rem 1.1rem;font-weight:700;font-size:.95rem;margin-bottom:1.4rem}
+
+@media (min-width:760px){
+  .soirs{grid-template-columns:repeat(3,1fr)}
+  .pourqui{grid-template-columns:1fr 1fr}
+  .compare{grid-template-columns:1fr 1fr;align-items:start}
+  .avantages{grid-template-columns:1fr 1fr}
+}
+@media (max-width:759px){
+  .entete .btn{display:none}
+  .cta .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
