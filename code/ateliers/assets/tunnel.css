@@ -46,9 +46,13 @@ a{color:inherit}
 .btn--petit{padding:.7rem 1.2rem;font-size:.95rem}
 .btn--large{width:100%}
 .sous-btn{display:block;text-align:center;font-size:.9rem;color:rgba(255,255,255,.62);margin-top:.6rem}
-.cta{margin:2.2rem 0}
+.cta{margin:2.2rem 0;display:flex;flex-direction:column;align-items:flex-start}
 .cta .btn{min-width:min(420px,100%)}
-.cta--centre{display:flex;flex-direction:column;align-items:center}
+.cta--centre{align-items:center}
+/* 🔴 Sans ce `display:flex`, `.sous-btn` prenait toute la largeur du bloc et se
+   centrait sur la PAGE, pendant que le bouton restait a gauche. Le rappel des dates
+   flottait alors au milieu du vide, sans rapport visible avec le bouton.
+   Signale par Ruben le 14/09/2026 : « c'est assez bizarre, surtout que c'est au milieu ». */
 
 /* ---------- surtitre ---------- */
 .sur{
@@ -68,6 +72,13 @@ a{color:inherit}
 .heros h1 .vif{background:var(--chaud);-webkit-background-clip:text;background-clip:text;color:transparent}
 .heros__accroche{font-size:clamp(1.02rem,2.2vw,1.18rem);color:rgba(255,255,255,.82);max-width:52ch}
 .heros__accroche b{color:#fff}
+/* Hero sans image : tout se centre, sinon la colonne de texte flotte a gauche
+   d'un grand vide. Demande de Ruben, 14/09/2026. */
+.heros--centre{text-align:center}
+.heros--centre .sur{justify-content:center}
+.heros--centre h1{margin-inline:auto;max-width:20ch}
+.heros--centre .heros__accroche{margin-inline:auto}
+.heros--centre .badges{justify-content:center}
 .badges{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.6rem 0 0;padding:0;list-style:none}
 .badges li{
   border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:.45rem 1rem;
