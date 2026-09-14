@@ -160,7 +160,8 @@
             <input type="email" id="email" name="email" required inputmode="email" autocomplete="email" placeholder="Par exemple : adjoa@exemple.com" />
           </div>
 
-          <button type="submit" class="btn btn--chaud btn--large">Je réserve ma place</button>
+          <button type="submit" class="btn btn--chaud btn--large" id="envoyer">Je réserve ma place</button>
+          <p id="erreur" style="display:none;color:#B91C1C;font-size:.92rem;margin:.8rem 0 0">L'envoi n'a pas abouti. Vérifiez votre connexion et réessayez.</p>
           <span class="sous-btn">Vous recevez le lien sur WhatsApp. Aucune publicité.</span>
         </form>
       </div>
@@ -192,5 +193,38 @@
   </div>
 </footer>
 
+
+<script>
+/* 🔴 Mesure du 14/09/2026 : une soumission de formulaire PAR NAVIGATION n'est pas enregistree
+   par Netlify sur ce site, alors qu'un POST direct l'est, a l'identique. Trois essais de chaque.
+   On envoie donc en fetch, puis on redirige a la main. */
+(function(){
+  var f = document.querySelector('form[name="ateliers-septembre"]');
+  if (!f) return;
+  var btn = document.getElementById('envoyer');
+  var err = document.getElementById('erreur');
+  var suite = f.getAttribute('action') || '/ateliers/merci';
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!f.checkValidity()) { f.reportValidity(); return; }
+    err.style.display = 'none';
+    btn.disabled = true;
+    var avant = btn.textContent;
+    btn.textContent = 'Envoi en cours...';
+    fetch('/ateliers/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(f)).toString()
+    }).then(function(r){
+      if (!r.ok) throw new Error(r.status);
+      window.location.href = suite;
+    }).catch(function(){
+      btn.disabled = false;
+      btn.textContent = avant;
+      err.style.display = 'block';
+    });
+  });
+})();
+</script>
 </body>
 </html>
