@@ -83,7 +83,7 @@ première ligne, avant même la section des 3 pôles.
   overlay "verre dépoli" (glassmorphism)** — `.hero__media-caption`, fond
   semi-transparent sombre + `backdrop-filter: blur(16px) saturate(160%)`,
   bordure claire fine, texte blanc — affiche "Mr Patrick D. ATINDEHOU /
-  Manager & CEO AXÔSU" directement sur la photo.
+  Manager & CEO AXOSU" directement sur la photo.
 - **3 axes stratégiques (Accueil + Nos services)** : une photo par axe,
   fournies par Ruben, mise en page alternée texte/photo (`.pole-section`,
   classe `reverse` pour inverser le sens) — `edutech.jpg`, `coaching.jpg`,
